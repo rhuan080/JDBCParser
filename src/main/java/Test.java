@@ -1,14 +1,11 @@
-import java.util.List;
 
-public class Sale {
+public class Test {
 	
 	private Integer id;
 	
 	
 	private String name;
 	
-	
-	private List<Test> test;
 
 	
 	public Integer getId() {
@@ -17,14 +14,6 @@ public class Sale {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public List<Test> getTest() {
-		return test;
-	}
-
-	public void setTest(List<Test> test) {
-		this.test = test;
 	}
 
 	public String getName() {
