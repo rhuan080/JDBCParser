@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import parser.JdbcParserCharacter;
+
 public class LineResultImpl implements LineResult{
 	
 	private Map<String,Object> column;
@@ -49,7 +51,7 @@ public class LineResultImpl implements LineResult{
 		List<String> nameColumnsToReturn = new ArrayList<String>();
 		
 		for(String nameColumn : nameColumns){
-			String[] str = nameColumn.split("_");
+			String[] str = nameColumn.split(JdbcParserCharacter.NAVEGATION_CHAR.getValor());
 			
 			if(level.equals(str.length)){
 				nameColumnsToReturn.add(nameColumn);
@@ -62,10 +64,15 @@ public class LineResultImpl implements LineResult{
 	public Integer getLevelOfColumn(String nameColumn) {
 		
 		if(getColumn(nameColumn) != null){
-			String[] str = nameColumn.split("_");
+			String[] str = nameColumn.split(JdbcParserCharacter.NAVEGATION_CHAR.getValor());
 			return str.length;
 		}
 		return -1;
+	}
+
+	public String getHashOfLevel(Integer level) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
