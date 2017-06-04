@@ -42,5 +42,13 @@ public interface LineResult {
 	 * @return
 	 */
 	public Integer getLevelOfColumn(String nameColumn);
+	
+	/**
+	 * Return hash of level. The hash of level is hash of level 1 until level N. 
+	 * 
+	 * @param level
+	 * @return The hash as a String
+	 */	
+	public String getHashOfLevel(Integer level);
 
 }
